@@ -2,7 +2,7 @@
 
 <div align="center">
 
-> Upload a company's financial documents. Get a full Credit Appraisal Memo in minutes.
+Upload a company's financial documents. Get a full Credit Appraisal Memo in minutes.
 
 Built for the **Intelli-Credit Hackathon** — Next-Gen Corporate Credit Appraisal challenge.
 
