@@ -1,36 +1,35 @@
-#  Intelli-Credit — AI-Powered Credit Appraisal Engine
+
+# ⚡ Intelli-Credit — AI-Powered Credit Appraisal Engine
 
 <div align="center">
 
-Upload a company's financial documents. Get a full Credit Appraisal Memo in minutes.
+**Upload a company's financial documents. Get a full Credit Appraisal Memo in minutes.**
 
 Built for the **Intelli-Credit Hackathon** — Next-Gen Corporate Credit Appraisal challenge.
 
----
-
-## 🌐 Live Deployment
-
-**Access the deployed application here:**
-
-**https://lonedev-ratnesh.vercel.app**
-
----
+### 🌐 [Live Demo → lonedev-ratnesh.vercel.app](https://lonedev-ratnesh.vercel.app)
 
 </div>
 
 ---
 
-## What It Does
+## The Problem
 
-Banks take 2–3 weeks to manually appraise a loan application. Intelli-Credit does it in under 5 minutes.
+Banks take 2–3 weeks to manually appraise a loan application. Credit managers drown in PDFs, court records, GST filings, and news articles — all manually stitched together. Bias creeps in. Early warning signals get missed.
+
+**Intelli-Credit does it in under 5 minutes.**
+
+---
+
+## What It Does
 
 | Step | What Happens |
 |------|-------------|
-| 📄 Upload PDF | Annual reports, bank statements, financials — even scanned docs |
+| 📄 Upload PDF | Annual reports, bank statements, financials — even scanned docs via OCR |
 | 🤖 AI Analysis | Extracts Revenue, Profit, Debt, EBITDA using Groq (Llama 3.3 70B) |
-| 📊 Credit Score | Scores company 0–100 across 5 dimensions, gives Approve/Reject |
+| 📊 Credit Score | Scores company 0–100 across the 5 Cs of Credit, gives Approve/Reject |
 | 🌐 Web Research | Auto-searches news, court records, NCLT filings, regulatory alerts |
-| 📋 CAM Report | Generates a professional Credit Appraisal Memo as a Word document |
+| 📋 CAM Report | Downloads a professional Credit Appraisal Memo as a Word document |
 
 ---
 
@@ -38,14 +37,14 @@ Banks take 2–3 weeks to manually appraise a loan application. Intelli-Credit d
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | React + Vite |
-| Backend | FastAPI (Python) |
-| LLM | Groq API — Llama 3.3 70B |
-| PDF Parsing | pdfplumber + pytesseract |
-| Web Research | Tavily API |
+| Frontend | React + Vite — deployed on Vercel |
+| Backend | FastAPI (Python) — deployed on Render |
+| LLM | Groq API — Llama 3.3 70B (free tier) |
+| PDF Parsing | pdfplumber + pytesseract (OCR) |
+| Web Research | Tavily API (free tier) |
 | Report Export | python-docx |
 
-**100% free to run** — no paid APIs required beyond free tiers.
+**100% free to run** — no paid APIs required.
 
 ---
 
@@ -67,48 +66,6 @@ intelli-credit/
 
 ---
 
-## Getting Started
-
-### 1. Clone the repo
-```bash
-git clone https://github.com/YOUR_USERNAME/intelli-credit.git
-cd intelli-credit
-```
-
-### 2. Backend Setup
-```bash
-cd backend
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-Create a `.env` file in `/backend`:
-```
-GROQ_API_KEY=your_groq_key_here
-TAVILY_API_KEY=your_tavily_key_here
-```
-
-Get your free keys:
-- Groq: https://console.groq.com
-- Tavily: https://tavily.com
-
-Start the backend:
-```bash
-python main.py
-```
-
-### 3. Frontend Setup
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Open `http://localhost:5173`
-
----
-
 ## How the Scoring Works
 
 The engine scores companies across the **5 Cs of Credit**:
@@ -117,26 +74,26 @@ The engine scores companies across the **5 Cs of Credit**:
 |-----------|--------|----------------|
 | Character | 20pts | Promoter background, litigation, fraud signals |
 | Capacity | 25pts | DSCR, profit margin, debt-to-revenue ratio |
-| Capital | 20pts | Net worth, leverage, GST vs bank match |
-| Collateral | 20pts | Security coverage, asset quality |
-| Conditions | 15pts | Sector outlook, regulatory risk |
+| Capital | 20pts | Net worth, leverage, GST vs bank reconciliation |
+| Collateral | 20pts | Security coverage, asset quality, encumbrance |
+| Conditions | 15pts | Sector outlook, regulatory risk, macro signals |
 
 **Decision Table:**
 
-| Score | Grade | Decision |
-|-------|-------|----------|
-| 80–100 | A | Approve — Base + 0.75% |
-| 65–79 | B | Approve with conditions |
-| 50–64 | C | Refer to credit committee |
-| < 50 | D | Reject |
+| Score | Grade | Decision | Rate |
+|-------|-------|----------|------|
+| 80–100 | A | Approve | Base + 0.75% |
+| 65–79 | B | Approve with conditions | Base + 1.5% |
+| 50–64 | C | Refer to credit committee | Base + 2.5% |
+| < 50 | D | Reject | — |
 
 ---
 
 ## What is a CAM Report?
 
-A **Credit Appraisal Memo** is the official document a bank produces before approving or rejecting a loan. It contains the borrower's background, financial analysis, risk assessment, collateral details, and the final recommendation.
+A **Credit Appraisal Memo** is the official document a bank produces before approving or rejecting a loan. It contains the borrower's background, financial analysis, risk assessment, collateral details, and a final recommendation — written in formal Indian banking language.
 
-In real banks, this takes 2–3 weeks to prepare manually. Intelli-Credit generates it automatically in under 60 seconds.
+In real banks this takes 2–3 weeks manually. Intelli-Credit generates it in under 60 seconds.
 
 ---
 
@@ -152,14 +109,35 @@ In real banks, this takes 2–3 weeks to prepare manually. Intelli-Credit genera
 
 ---
 
-## India-Specific Features
+## India-Specific Intelligence
 
-- GST reconciliation logic (GSTR-2A vs 3B mismatch detection)
-- NCLT / IBC insolvency signal detection
-- CIBIL Commercial score awareness
-- Indian financial language in generated reports (Crores, Lakhs, WC limits)
+- GST reconciliation — GSTR-2A vs 3B mismatch detection
+- NCLT / IBC insolvency proceedings detection
+- CIBIL Commercial score signal awareness
+- Indian financial language in reports (Crores, Lakhs, WC limits, SARFAESI)
 - Searches Economic Times, Mint, Business Standard for company news
 
 ---
 
+## Self Hosting
+```bash
+# Clone
+git clone https://github.com/ratneeshh/intelli-credit.git
 
+# Backend
+cd backend && python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+# Add GROQ_API_KEY and TAVILY_API_KEY to .env
+python main.py
+
+# Frontend
+cd frontend && npm install
+# Set API = "http://localhost:8000" in src/App.jsx
+npm run dev
+```
+
+Free API keys: [Groq](https://console.groq.com) · [Tavily](https://tavily.com)
+
+---
+
+> *"A credit manager today takes 3 weeks. Intelli-Credit: under 5 minutes."*
