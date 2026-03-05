@@ -12,7 +12,7 @@ Built for the **Intelli-Credit Hackathon** — Next-Gen Corporate Credit Apprais
 
 **Access the deployed application here:**
 
-**http://34.230.243.158:3000/**
+**https://lonedev-ratnesh.vercel.app**
 
 ---
 
