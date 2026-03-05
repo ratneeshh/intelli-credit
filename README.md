@@ -1,5 +1,5 @@
 
-# ⚡ Intelli-Credit — AI-Powered Credit Appraisal Engine
+# Intelli-Credit — AI-Powered Credit Appraisal Engine
 
 <div align="center">
 
