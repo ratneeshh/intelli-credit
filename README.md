@@ -7,7 +7,15 @@
 
 Built for the **Intelli-Credit Hackathon** — Next-Gen Corporate Credit Appraisal challenge.
 
-### 🌐 [Live Demo → lonedev-ratnesh.vercel.app](https://lonedev-ratnesh.vercel.app)
+---
+## 🌐 Live Deployment
+
+**Access the deployed application here:**
+
+**http://34.230.243.158:3000/**
+
+---
+
 
 </div>
 
