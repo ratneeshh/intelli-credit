@@ -21,7 +21,7 @@ async def lifespan(app: FastAPI):
 
 async def keep_alive():
     while True:
-        await asyncio.sleep(600)  # every 10 minutes
+        await asyncio.sleep(30)  # every 30 sec
         try:
             async with httpx.AsyncClient() as client:
                 await client.get("https://intelli-credit.onrender.com")
