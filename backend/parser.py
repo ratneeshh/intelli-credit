@@ -3,7 +3,7 @@ import pytesseract
 from PIL import Image
 import io
 
-MAX_PAGES = 10  # Limit to first 10 pages to avoid memory crash on Render free tier
+MAX_PAGES = 15  # Limit to first 10 pages to avoid memory crash on Render free tier
 
 def extract_text_from_pdf(file_bytes: bytes) -> str:
     text = ""
