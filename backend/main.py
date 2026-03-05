@@ -9,11 +9,28 @@ from scorer import calculate_score
 from researcher import research_company
 from report_generator import generate_cam_report
 from pathlib import Path
+import httpx
+import asyncio
+from contextlib import asynccontextmanager
 import os
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    asyncio.create_task(keep_alive())
+    yield
+
+async def keep_alive():
+    while True:
+        await asyncio.sleep(600)  # every 10 minutes
+        try:
+            async with httpx.AsyncClient() as client:
+                await client.get("https://intelli-credit.onrender.com")
+        except:
+            pass
 
 load_dotenv()
 
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
