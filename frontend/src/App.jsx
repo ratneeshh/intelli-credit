@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API = "https://intelli-credit.onrender.com/";
+const API = "https://intelli-credit.onrender.com";
 
 export default function App() {
   const [page, setPage] = useState("home");
