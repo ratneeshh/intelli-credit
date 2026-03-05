@@ -1,4 +1,4 @@
-# ⚡ Intelli-Credit — AI-Powered Credit Appraisal Engine
+#  Intelli-Credit — AI-Powered Credit Appraisal Engine
 
 > Upload a company's financial documents. Get a full Credit Appraisal Memo in minutes.
 
@@ -148,6 +148,4 @@ In real banks, this takes 2–3 weeks to prepare manually. Intelli-Credit genera
 
 ---
 
-## Built With ❤️ for Hackathon
 
-> "A credit manager today takes 3 weeks. Our system: under 5 minutes."
